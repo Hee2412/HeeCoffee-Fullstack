@@ -40,4 +40,4 @@ services:
     restart: always
     ports:
       - "3000:3000"
-    stdin_open: true # Giữ cho React container không bị tắt đột ngột
+    stdin_open: true 
