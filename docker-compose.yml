@@ -1,0 +1,43 @@
+services:
+  # 1. Database MySQL
+  db:
+    image: mysql:8.0
+    container_name: hee_coffee_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: hee_coffee
+      MYSQL_ROOT_PASSWORD: 2412
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  # 2. Backend (Java Spring Boot)
+  backend:
+    build: ./Hee-coffee-be
+    container_name: hee_coffee_be
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/hee_coffee?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 2412
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - "8080:8080"
+
+  # 3. Frontend (React)
+  frontend:
+    build: ./Hee-coffee-fe
+    container_name: hee_coffee_fe
+    restart: always
+    ports:
+      - "3000:3000"
+    stdin_open: true # Giữ cho React container không bị tắt đột ngột
