@@ -1,0 +1,249 @@
+/* src/styles/Checkout.module.scss */
+
+.checkout_page {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 20px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  // User/Guest banner
+  .user_banner,
+  .guest_banner {
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  }
+
+  .user_banner {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+
+    strong {
+      color: #0c4128;
+    }
+  }
+
+  .guest_banner {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #856404;
+
+    span {
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 500;
+
+      &:hover {
+        color: #0056b3;
+      }
+    }
+  }
+
+  // Form
+  .checkout_form {
+    display: grid;
+    gap: 24px;
+  }
+
+  .form_section {
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; // ← FIX: Prevent content overflow
+
+    h2 {
+      margin: 0 0 20px 0;
+      font-size: 1.3rem;
+      color: #212529;
+      font-weight: 600;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 12px;
+    }
+  }
+
+  .form_grid {
+    display: grid;
+    gap: 16px;
+
+    input {
+      width: 100%;
+      max-width: 100%; // ← FIX: Prevent overflow
+      box-sizing: border-box; // ← FIX: Include padding in width
+      padding: 14px 16px;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #28a745;
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+  }
+
+  // Payment options
+  .payment_options {
+    display: grid;
+    gap: 12px;
+  }
+
+  .payment_option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #28a745;
+    }
+
+    span {
+      font-size: 1rem;
+      color: #495057;
+      font-weight: 500;
+    }
+
+    &:hover {
+      border-color: #28a745;
+      background: #f1f9f3;
+    }
+
+    &:has(input:checked) {
+      border-color: #28a745;
+      background: #d4edda;
+
+      span {
+        color: #155724;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Order summary
+  .order_summary {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .summary_row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #495057;
+
+    &.total {
+      border-top: 2px solid #dee2e6;
+      padding-top: 16px;
+      margin-top: 8px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #212529;
+
+      .total_price {
+        color: #28a745;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  // Submit button
+  .submit_btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(40, 167, 69, 0.4);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      background: #adb5bd;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .checkout_page {
+    margin: 2rem auto;
+    padding: 0 16px;
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    .form_section {
+      padding: 20px;
+
+      h2 {
+        font-size: 1.1rem;
+      }
+    }
+
+    .form_grid input {
+      padding: 12px 14px;
+    }
+
+    .payment_option {
+      padding: 12px 14px;
+
+      span {
+        font-size: 0.95rem;
+      }
+    }
+
+    .submit_btn {
+      font-size: 1rem;
+      padding: 14px;
+    }
+  }
+}

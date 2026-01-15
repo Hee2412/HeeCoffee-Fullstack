@@ -1,0 +1,38 @@
+# --- DATABASE & DOCKER ---
+mysql_data/
+.env
+
+# --- FRONTEND (React/Node.js) ---
+**/node_modules/
+**/build/
+**/dist/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.git
+
+# --- BACKEND (Java/Spring Boot/Maven) ---
+**/target/
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+HELP.md
+
+# --- IDE & SYSTEM (Các file rác của phần mềm viết code) ---
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+bin/
+.DS_Store
+Thumbs.db

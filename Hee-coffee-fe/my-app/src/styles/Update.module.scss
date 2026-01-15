@@ -1,0 +1,110 @@
+.card_container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fffaf5, #fefefe);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); // shadow đậm hơn cho nổi
+  text-align: center;
+  border: 1px solid #e5d5c5;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input {
+    padding: 0.85rem;
+    border: 1px solid #d6c3b2;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+    transition: 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #c8a98d;
+      box-shadow: 0 0 0 3px rgba(200, 169, 141, 0.3);
+    }
+  }
+}
+
+.avatarWrap {
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input,
+  select {
+    padding: 0.85rem;
+    border: 1px solid #d6c3b2;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+    transition: 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #c8a98d;
+      box-shadow: 0 0 0 3px rgba(200, 169, 141, 0.3);
+    }
+  }
+}
+
+.updateBtn {
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #c8a98d, #b48d6c);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #b48d6c, #9c7655);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.delete {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #555;
+
+  &:hover {
+    text-decoration: underline;
+    color: #9c7655;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #f4ede7, #fafafa);
+}
+// Animation nhẹ khi load form
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

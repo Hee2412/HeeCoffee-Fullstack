@@ -1,0 +1,53 @@
+.category_bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  &.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &_inner {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    button {
+      background-color: transparent;
+      border: 1px solid #ddd;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: #444;
+      transition: all 0.2s ease-in-out;
+      
+
+      &.active {
+        background-color: #c19a6b;
+        color: white;
+        font-weight: bold;
+        border-color: #c19a6b;
+      }
+
+      &:hover {
+        background-color: #f6eee6;
+      }
+    }
+  }
+}

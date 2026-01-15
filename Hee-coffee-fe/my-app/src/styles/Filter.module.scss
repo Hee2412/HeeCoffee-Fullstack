@@ -1,0 +1,41 @@
+.product_filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200px;
+
+  button {
+    background-color: #f8f5f0;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 220px;
+    height: 54px;
+
+    &.active {
+      background-color: #c8a98d;
+      color: white;
+
+      .arrow {
+        transform: translateX(3px);
+      }
+    }
+
+    &:hover {
+      background-color: #d9c2af;
+      transform: scale(1.03);
+    }
+
+    .arrow {
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+  }
+}

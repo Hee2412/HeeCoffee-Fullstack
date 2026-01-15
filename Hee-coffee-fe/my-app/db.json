@@ -1,0 +1,204 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Espresso",
+      "type": ["Espresso"],
+      "image": "/coffee/espresso.jpg",
+      "description": "A strong, bold shot of coffee with rich crema.",
+      "price": 1.5
+    },
+    {
+      "id": 2,
+      "name": "Cappuccino",
+      "type": ["Milk", "Espresso"],
+      "image": "/coffee/cappuccino.jpg",
+      "description": "Creamy foam layered over strong espresso.",
+      "price": 3
+    },
+    {
+      "id": 3,
+      "name": "Latte",
+      "type": ["Milk", "Espresso"],
+      "image": "/coffee/latte.jpg",
+      "description": "Smooth and balanced with milk and espresso.",
+      "price": 3
+    },
+    {
+      "id": 4,
+      "name": "Mocha",
+      "type": ["Milk", "Espresso", "Chocolate"],
+      "image": "/coffee/mocha.jpg",
+      "description": "A sweet blend of chocolate and espresso.",
+      "price": 4
+    },
+    {
+      "id": 5,
+      "name": "Americano",
+      "type": ["Espresso"],
+      "image": "/coffee/americano.jpg",
+      "description": "Espresso with hot water for a lighter taste.",
+      "price": 2.5
+    },
+    {
+      "id": 6,
+      "name": "Macchiato",
+      "type": ["Espresso", "Milk"],
+      "image": "/coffee/macchiato.jpg",
+      "description": "Espresso topped with a touch of steamed milk.",
+      "price": 2.75
+    },
+    {
+      "id": 7,
+      "name": "Flat White",
+      "type": ["Milk", "Espresso"],
+      "image": "/coffee/flatwhite.jpg",
+      "description": "Velvety microfoam over strong espresso.",
+      "price": 3
+    },
+    {
+      "id": 8,
+      "name": "Cold Brew",
+      "type": ["Cold Brew"],
+      "image": "/coffee/coldbrew.jpg",
+      "description": "Brewed cold for 12 hours, smooth and refreshing.",
+      "price": 3.5
+    },
+    {
+      "id": 9,
+      "name": "Affogato",
+      "type": ["Espresso", "Dessert"],
+      "image": "/coffee/affogato.jpg",
+      "description": "Vanilla ice cream drowned in hot espresso.",
+      "price": 8
+    },
+    {
+      "id": 10,
+      "name": "Iced Latte",
+      "type": ["Cold", "Milk", "Espresso"],
+      "image": "/coffee/icedlatte.jpg",
+      "description": "Chilled milk with a shot of espresso.",
+      "price": 3
+    },
+    {
+      "id": 11,
+      "name": "Caramel Macchiato",
+      "type": ["Milk", "Espresso"],
+      "image": "/coffee/caramelmacchiato.jpg",
+      "description": "Rich espresso with milk and caramel drizzle.",
+      "price": 4.5
+    },
+    {
+      "id": 12,
+      "name": "Matcha Latte",
+      "type": ["Tea", "Milk"],
+      "image": "/coffee/matchalatte.jpg",
+      "description": "Earthy matcha blended with creamy milk.",
+      "price": 7.25
+    },
+    {
+      "id": 13,
+      "name": "Vietnamese Coffee",
+      "type": ["Signature"],
+      "image": "/coffee/vietnamese.jpg",
+      "description": "Bold coffee with sweetened condensed milk.",
+      "price": 3
+    },
+    {
+      "id": 14,
+      "name": "Honey Citrus Mint Tea",
+      "type": ["Tea", "Fruit"],
+      "image": "/coffee/honeytea.jpg",
+      "description": "Bright tea with honey, citrus, and a minty kick.",
+      "price": 3.45
+    },
+    {
+      "id": 15,
+      "name": "Berry Smoothie",
+      "type": ["Smoothies", "Fruit"],
+      "image": "/coffee/berrysmoothie.jpg",
+      "description": "Refreshing smoothie with mixed berries.",
+      "price": 6.99
+    },
+    {
+      "id": 16,
+      "name": "Orange Juice",
+      "type": ["Juice", "Fruit"],
+      "image": "/coffee/orangejuice.jpg",
+      "description": "Freshly squeezed and full of sunshine.",
+      "price": 3
+    },
+    {
+      "id": 17,
+      "name": "Mango Smoothie",
+      "type": ["Smoothies", "Fruit"],
+      "image": "/coffee/mango_smoothie.jpg",
+      "description": "A tropical blend of ripe mangoes and creamy yogurt.",
+      "price": 4.9
+    },
+    {
+      "id": 18,
+      "name": "Strawberry Smoothie",
+      "type": ["Smoothies", "Fruit"],
+      "image": "/coffee/strawberry_smoothie.jpg",
+      "description": "Sweet strawberries blended into a refreshing delight.",
+      "price": 5
+    },
+    {
+      "id": 19,
+      "name": "Watermelon Juice",
+      "type": ["Juice", "Fruit"],
+      "image": "/coffee/watermelon_juice.jpg",
+      "description": "Juicy, hydrating, and perfect for hot days.",
+      "price": 3.15
+    },
+    {
+      "id": 20,
+      "name": "Pineapple Juice",
+      "type": ["Juice", "Fruit"],
+      "image": "/coffee/pineapple_juice.jpg",
+      "description": "Tangy, sweet, and packed with sunshine.",
+      "price": 3
+    },
+    {
+      "id": 21,
+      "name": "Avocado Smoothie",
+      "type": ["Smoothies", "Milk", "Fruit"],
+      "image": "/coffee/avocado_smoothie.jpg",
+      "description": "Smooth, buttery avocado mixed with milk and honey.",
+      "price": 5.5
+    },
+    {
+      "id": 22,
+      "name": "Vietnamese White Coffee",
+      "type": ["Signature", "Milk"],
+      "image": "/coffee/bacxiu.jpg",
+      "description": "A sweet Vietnamese-style coffee with condensed milk and a hint of espresso.",
+      "price": 2.5
+    },
+    {
+      "id": 23,
+      "name": "Vietnamese Black Coffee",
+      "type": ["Signature"],
+      "image": "/coffee/blackcoffee.jpg",
+      "description": "Strong and bold Vietnamese coffee brewed with a traditional phin filter.",
+      "price": 2.5
+    },
+    {
+      "id": 24,
+      "name": "Golden Lemon Cold Brew",
+      "type": ["Cold Brew", "Signature"],
+      "image": "/coffee/goldenlemon.jpg",
+      "description": "A refreshing mix of cold brew and zesty lemon for a bright summer twist.",
+      "price": 5.5
+    },
+    {
+      "id": 25,
+      "name": "Nitro Cold Brew",
+      "type": ["Cold Brew", "Signature"],
+      "image": "/coffee/nitro.jpg",
+      "description": "Infused with nitrogen for a silky-smooth texture and a rich, creamy finish — no milk needed.",
+      "price": 6.25
+    }
+  ]
+}

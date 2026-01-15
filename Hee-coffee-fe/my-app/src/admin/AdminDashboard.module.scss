@@ -1,0 +1,459 @@
+/* src/styles/AdminDashboard.module.scss */
+
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.dashboard_header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+}
+
+.stats_grid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.revenue_breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+
+  .revenue_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+
+    .revenue_period {
+      font-size: 0.95rem;
+      color: #6b7280;
+      font-weight: 500;
+      min-width: 100px;
+    }
+
+    .revenue_amount {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1f2937;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      flex: 1;
+    }
+  }
+
+  // Highlight This Month
+  .revenue_item:first-child {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 4px;
+
+    .revenue_period {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .revenue_amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #10b981;
+    }
+  }
+
+  // This Week - medium emphasis
+  .revenue_item:nth-child(2) {
+    .revenue_amount {
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+  }
+
+  // Today - subtle
+  .revenue_item:last-child {
+    .revenue_period {
+      color: #9ca3af;
+    }
+    .revenue_amount {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+  }
+}
+
+.trends {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+
+  .stat_trend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 4px 0;
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    // ✅ Positive - Green
+    &.positive {
+      color: #10b981;
+
+      svg {
+        color: #10b981;
+      }
+    }
+
+    // ✅ Negative - Red
+    &.negative {
+      color: #ef4444;
+
+      svg {
+        transform: rotate(180deg);
+        color: #ef4444;
+      }
+    }
+
+    // ✅ Neutral - Gray
+    &.neutral {
+      color: #6b7280;
+
+      svg {
+        transform: rotate(90deg); // ➡️ Arrow right
+        color: #6b7280;
+      }
+    }
+  }
+}
+
+.stat_card.revenue {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.stat_card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .stat_label {
+    margin: 0 0 8px 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .stat_value {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .stat_detail {
+    font-size: 0.85rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .pending {
+    color: #f59e0b;
+  }
+
+  .completed {
+    color: #10b981;
+  }
+
+  .canceled {
+    color: #ef4444;
+  }
+
+  .stat_trend {
+    color: #28a745;
+    font-weight: 500;
+  }
+
+  &.revenue .stat_icon {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+  }
+
+  &.orders .stat_icon {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+  }
+}
+
+// Recent Orders Section
+.recent_orders_section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.section_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f1f3f5;
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  .view_all_btn {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Orders Table
+.orders_table_wrapper {
+  overflow-x: auto;
+}
+
+.orders_table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+
+  thead {
+    background: #f8f9fa;
+
+    th {
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 600;
+      color: #495057;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #f1f3f5;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #f8f9fa;
+      }
+
+      td {
+        padding: 16px;
+        color: #495057;
+        font-size: 0.95rem;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .no_data {
+    text-align: center;
+    padding: 60px 20px !important;
+    color: #adb5bd;
+    font-size: 1.1rem;
+  }
+
+  .amount {
+    font-weight: 600;
+    color: #28a745;
+  }
+
+  .status_badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &.pending_payment {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    &.active {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+
+    &.completed {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    &.canceled,
+    &.abandoned {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  }
+
+  .status_select {
+    padding: 6px 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: white;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #007bff;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px 16px;
+  }
+
+  .dashboard_header {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .stat_card {
+    padding: 20px;
+
+    .stat_icon {
+      width: 40px; // ✅ Thu nhỏ hơn trên mobile
+      height: 40px;
+      top: 16px;
+      right: 16px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .stat_info {
+      padding-right: 50px;
+    }
+
+    .stat_value {
+      font-size: 1.6rem;
+    }
+  }
+
+  .section_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    .view_all_btn {
+      width: 100%;
+    }
+  }
+}
