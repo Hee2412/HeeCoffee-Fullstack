@@ -21,6 +21,8 @@ yarn-error.log*
 **/.mvn/
 **/mvnw
 **/mvnw.cmd
+**/application.yml
+**/application.properties
 HELP.md
 
 # --- IDE & SYSTEM (Các file rác của phần mềm viết code) ---
