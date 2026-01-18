@@ -34,17 +34,26 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // 1. Public endpoints
                         .requestMatchers("/api/user/login", "/api/user/register", "/error", "/ws/**").permitAll()
-                        .requestMatchers("/api/product/**", "/api/type/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/product/**", "/api/type/**").permitAll()
                         .requestMatchers("/api/order/qr/{id}", "/api/order/{orderId}/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/order").permitAll() // Guest checkout
+                        .requestMatchers("/v3/api-docs/**",
+                                "/v2/api-docs/**",
+                                "/swagger-resources/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/webjars/**").permitAll()
 
                         // 2. Admin endpoints
                         .requestMatchers("/api/order/all", "/api/order/new-order", "/api/order/new-orders-count").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/order/{orderId}/status").hasRole("ADMIN")
                         .requestMatchers("/api/user/all", "/api/user/count").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/user/admin-update").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/user/{userId}/restore").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/user/{userId}").hasRole("ADMIN")
                         .requestMatchers("/api/order/sales-report").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/product/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/product/**").hasRole("ADMIN")
 
                         // 3. Authenticated endpoints (USER và ADMIN)
                         .requestMatchers(HttpMethod.PUT, "/api/user/me").authenticated()
