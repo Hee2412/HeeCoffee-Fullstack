@@ -318,6 +318,18 @@ export default function AdminUsers() {
                   placeholder="Enter email"
                 />
               </div>
+              <div className={s.form_group}>
+                <label>Phone number</label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  placeholder="Enter phone number"
+                />
+              </div>
 
               <div className={s.form_row}>
                 <div className={s.form_group}>
@@ -348,7 +360,7 @@ export default function AdminUsers() {
                   </select>
                 </div>
               </div>
-
+              
               <div className={s.form_group}>
                 <label>Address</label>
                 <textarea
