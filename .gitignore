@@ -25,7 +25,7 @@ yarn-error.log*
 **/application.properties
 HELP.md
 
-# --- IDE & SYSTEM (Các file rác của phần mềm viết code) ---
+# --- IDE & SYSTEM ---
 .idea/
 *.iws
 *.iml
